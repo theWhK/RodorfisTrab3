@@ -2,8 +2,10 @@
 /CRUDFaculdade.class
 /GestorFaculdadeJanela.class
 /ListarAlunosJanela.class
+/ListarTurmasJanela.class
 /MyListModel.class
 /Pessoa.class
 /Professor.class
 /Turma.class
-/ListarTurmasJanela.class
+/ListarProfessoresJanela.class
+/SeletorProfessorParaAlunoJanela.class

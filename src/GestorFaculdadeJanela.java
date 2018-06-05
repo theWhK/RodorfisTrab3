@@ -24,7 +24,7 @@ public final class GestorFaculdadeJanela extends JFrame {
 		JButton b3 = new JButton("Gerenciar Turmas");
 		titulo.add(tituloTexto);
 		
-		// Listeners
+		// Gatilhos para botões
 			// Gerenciar alunos
 			b1.addActionListener((e)->{
 				@SuppressWarnings("unused")

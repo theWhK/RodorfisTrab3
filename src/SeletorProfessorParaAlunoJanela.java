@@ -3,8 +3,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
@@ -13,37 +13,33 @@ import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 
-
-public class ListarTurmasJanela extends JFrame {
+@SuppressWarnings("serial")
+public class SeletorProfessorParaAlunoJanela extends JFrame {
 	
 	public JPanel titulo;
 	public JPanel botoes;
 	public JLabel tituloTexto;
-	public JList<Turma> listagem;
+	public JComboBox<Professor> listagem;
 	public JButton botaoNovo;
-	public JButton botaoMaisNovo;
-	public JButton botaoNovissimo;
 	
-	public List<Turma> listagemTurmas;
-	public MyListModel<Turma> listagemModel;
+	public List<Professor> listagemProfs;
+	public MyListModel<Professor> listagemModel;
 	
-	public ListarTurmasJanela() {
+	public SeletorProfessorParaAlunoJanela() {
 		super("Listagem de Alunos");
 		
-		listagemTurmas = CRUDFaculdade.hi().getTurma();
+		listagemProfs = CRUDFaculdade.hi().getProfessor();
 		listagemModel = new MyListModel<>();
 		
-		for(int i = 0; i < listagemTurmas.size(); i++){
-			listagemModel.add(listagemTurmas.get(i));
+		for(int i=0; i<listagemProfs.size(); i++){
+			listagemModel.add(listagemProfs.get(i));
 		}
 		
 		// Inicia os elementos
 		titulo = new JPanel();
-		tituloTexto = new JLabel("Listagem de Turmas");
-		listagem = new JList<>(listagemModel);
-		botaoNovo = new JButton("Novo");
-		botaoMaisNovo = new JButton("Editar");
-		botaoNovissimo = new JButton("Excluir");
+		tituloTexto = new JLabel("Listagem de Alunos");
+		listagem = new JComboBox(listagemModel);
+		botaoNovo = new JButton("Ok");
 		botoes = new JPanel();
 		
 		// Adiciona os elementos na interface
@@ -58,12 +54,7 @@ public class ListarTurmasJanela extends JFrame {
 		// Listeners
 			// Criar
 			botaoNovo.addActionListener((e)->{
-				String descricao = JOptionPane.showInputDialog(this, "Descrição: ");
-				String dataInicio = JOptionPane.showInputDialog(this, "Data de início: ");
-				String dataTermino = JOptionPane.showInputDialog(this, "Data de término: ");
-				
-				
-				
+				String nome = JOptionPane.showInputDialog(this, "Nome: ");
 				String cpf = JOptionPane.showInputDialog(this, "CPF: ");
 				String rg = JOptionPane.showInputDialog(this, "RG: ");
 				String ra = JOptionPane.showInputDialog(this, "RA:" );
@@ -109,7 +100,7 @@ public class ListarTurmasJanela extends JFrame {
 							"Erro", 
 							JOptionPane.ERROR_MESSAGE);
 				}
-	
+				
 			});
 			// Remover
 			botaoNovissimo.addActionListener((e)->{
