@@ -14,6 +14,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 
+@SuppressWarnings("serial")
 public class ListarAlunosJanela extends JFrame {
 	
 	public JPanel titulo;
@@ -61,7 +62,7 @@ public class ListarAlunosJanela extends JFrame {
 				String nome = JOptionPane.showInputDialog(this, "Nome: ");
 				String cpf = JOptionPane.showInputDialog(this, "CPF: ");
 				String rg = JOptionPane.showInputDialog(this, "RG: ");
-				String ra = JOptionPane.showInputDialog(this, "Ra:" );
+				String ra = JOptionPane.showInputDialog(this, "RA:" );
 				String dataDeMatricula = JOptionPane.showInputDialog(this, "Data de matricula: ");
 				Aluno a = new Aluno();
 				a.setNome(nome);
@@ -90,8 +91,19 @@ public class ListarAlunosJanela extends JFrame {
 					a.setDataDeMatricula(dataDeMatricula);
 					listagem.repaint();
 				}
-				catch (Exception eheitaCaraio) {
-					System.out.printf("se fudeu");
+				catch (NullPointerException oCaraNaoSelecionouNadaMeuDeus) {
+					JOptionPane.showMessageDialog(
+							this, 
+							"Selecione um elemento na lista.", 
+							"Erro", 
+							JOptionPane.ERROR_MESSAGE);
+				}
+				catch (Exception vishNemSei) {
+					JOptionPane.showMessageDialog(
+							this, 
+							"Erro não previsto.", 
+							"Erro", 
+							JOptionPane.ERROR_MESSAGE);
 				}
 				
 			});
@@ -102,8 +114,19 @@ public class ListarAlunosJanela extends JFrame {
 					CRUDFaculdade.hi().removeAlunoAt(index);
 					listagemModel.remove(index);
 				}
-				catch (Exception sehloiroTio) {
-					
+				catch (NullPointerException oCaraNaoSelecionouNadaMeuDeus) {
+					JOptionPane.showMessageDialog(
+							this, 
+							"Selecione um elemento na lista.", 
+							"Erro", 
+							JOptionPane.ERROR_MESSAGE);
+				}
+				catch (Exception vishNemSei) {
+					JOptionPane.showMessageDialog(
+							this, 
+							"Erro não previsto.", 
+							"Erro", 
+							JOptionPane.ERROR_MESSAGE);
 				}
 			});
 		

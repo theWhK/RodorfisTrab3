@@ -27,11 +27,17 @@ public final class GestorFaculdadeJanela extends JFrame {
 		// Listeners
 			// Gerenciar alunos
 			b1.addActionListener((e)->{
+				@SuppressWarnings("unused")
 				ListarAlunosJanela eita = new ListarAlunosJanela();
 			});
 			
 		b2.addActionListener((e)->{});
-		b3.addActionListener((e)->{});
+			
+			// Gerenciar turmas
+			b3.addActionListener((e)->{
+				@SuppressWarnings("unused")
+				ListarTurmasJanela eita = new ListarTurmasJanela();
+			});
 		
 		// Insere os elementos na interface
 		add(titulo);
