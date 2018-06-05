@@ -64,7 +64,7 @@ public class ListarTurmasJanela extends JFrame {
 				
 				
 				
-				String cpf = JOptionPane.showInputDialog(this, "CPF: ");
+				/*String cpf = JOptionPane.showInputDialog(this, "CPF: ");
 				String rg = JOptionPane.showInputDialog(this, "RG: ");
 				String ra = JOptionPane.showInputDialog(this, "RA:" );
 				String dataDeMatricula = JOptionPane.showInputDialog(this, "Data de matricula: ");
@@ -76,9 +76,10 @@ public class ListarTurmasJanela extends JFrame {
 				a.setCpf(cpf);
 				a.setDataDeMatricula(dataDeMatricula);
 				CRUDFaculdade.hi().addAluno(a);
-				listagemModel.add(a);
+				listagemModel.add(a);*/
 			});
 			// Atualizar
+			/*
 			botaoMaisNovo.addActionListener((e)->{
 				try {
 					Aluno a = listagem.getSelectedValue();
@@ -132,7 +133,7 @@ public class ListarTurmasJanela extends JFrame {
 							"Erro", 
 							JOptionPane.ERROR_MESSAGE);
 				}
-			});
+			});*/
 		
 		// Mostra a interface
 		setSize(500,500);

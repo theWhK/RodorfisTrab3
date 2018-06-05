@@ -31,10 +31,10 @@ public final class GestorFaculdadeJanela extends JFrame {
 				ListarAlunosJanela eita = new ListarAlunosJanela();
 			});
 			
-			// Gerenciar professores
+			//Gerenciar professores
 			b2.addActionListener((e)->{
 				@SuppressWarnings("unused")
-				//ListarProfessoresJanela eita = new ListarProfessoresJanela();
+				ListarProfessorJanela eita = new ListarProfessorJanela();
 			});
 			
 			// Gerenciar turmas
