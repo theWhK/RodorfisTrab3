@@ -69,7 +69,6 @@ public class ListarAlunosJanela extends JFrame {
 				a.setCpf(cpf);
 				a.setRg(rg);
 				a.setRa(ra);
-				a.setCpf(cpf);
 				a.setDataDeMatricula(dataDeMatricula);
 				CRUDFaculdade.hi().addAluno(a);
 				listagemModel.add(a);
@@ -87,7 +86,6 @@ public class ListarAlunosJanela extends JFrame {
 					a.setCpf(cpf);
 					a.setRg(rg);
 					a.setRa(ra);
-					a.setCpf(cpf);
 					a.setDataDeMatricula(dataDeMatricula);
 					listagem.repaint();
 				}

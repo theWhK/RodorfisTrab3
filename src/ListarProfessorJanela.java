@@ -12,11 +12,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 
+@SuppressWarnings("serial")	
 public class ListarProfessorJanela extends JFrame {
 	public JPanel titulo;
 	public JPanel botoes;
 	public JLabel tituloTexto;
-	public JList<Aluno> listagem;
+	public JList<Professor> listagem;
 	public JButton botaoNovo;
 	public JButton botaoMaisNovo;
 	public JButton botaoNovissimo;
@@ -57,17 +58,71 @@ public class ListarProfessorJanela extends JFrame {
 			botaoNovo.addActionListener((e)->{
 				String nome = JOptionPane.showInputDialog(this, "Nome: ");
 				String cpf = JOptionPane.showInputDialog(this, "CPF: ");
-				String rg = JOptionPane.showInputDialog(this, "Descriçào: ");
-				String descricao = JOptionPane.showInputDialog(this, "Ra:" );
+				String rg = JOptionPane.showInputDialog(this, "RG: ");
+				String especialidade = JOptionPane.showInputDialog(this, "Especialidade:" );
 				Professor p = new Professor();
-				a.setNome(nome);
-				a.setCpf(cpf);
-				a.setRg(rg);
-				a.setRa(ra);
-				a.setCpf(cpf);
-				a.setDataDeMatricula(dataDeMatricula);
-				CRUDFaculdade.hi().addAluno(a);
-				listagemModel.add(a);
+				p.setNome(nome);
+				p.setCpf(cpf);
+				p.setRg(rg);
+				p.setEspecialidade(especialidade);
+				CRUDFaculdade.hi().addProfessor(p);
+				listagemModel.add(p);
 			});
+			// Atualizar
+			botaoMaisNovo.addActionListener((e)->{
+				try {
+					Professor p = listagem.getSelectedValue();
+					String nome = JOptionPane.showInputDialog(this, "Nome: ", p.getNome());
+					String cpf = JOptionPane.showInputDialog(this, "CPF: ", p.getCpf());
+					String rg = JOptionPane.showInputDialog(this, "RG: ", p.getRg());
+					String especialidade = JOptionPane.showInputDialog(this, "Descricao:" ,p.getEspecialidade());
+					p.setNome(nome);
+					p.setCpf(cpf);
+					p.setRg(rg);
+					p.setEspecialidade(especialidade);
+					listagem.repaint();
+				}
+				catch (NullPointerException oCaraNaoSelecionouNadaMeuDeus) {
+					JOptionPane.showMessageDialog(
+							this, 
+							"Selecione um elemento na lista.", 
+							"Erro", 
+							JOptionPane.ERROR_MESSAGE);
+				}
+				catch (Exception vishNemSei) {
+					JOptionPane.showMessageDialog(
+							this, 
+							"Erro não previsto.", 
+							"Erro", 
+							JOptionPane.ERROR_MESSAGE);
+				}
+				
+			});
+			// Remover
+			botaoNovissimo.addActionListener((e)->{
+				try {
+					int index = listagem.getSelectedIndex();
+					CRUDFaculdade.hi().removeProfessorAt(index);
+					listagemModel.remove(index);
+				}
+				catch (NullPointerException oCaraNaoSelecionouNadaMeuDeus) {
+					JOptionPane.showMessageDialog(
+							this, 
+							"Selecione um elemento na lista.", 
+							"Erro", 
+							JOptionPane.ERROR_MESSAGE);
+				}
+				catch (Exception vishNemSei) {
+					JOptionPane.showMessageDialog(
+							this, 
+							"Erro não previsto.", 
+							"Erro", 
+							JOptionPane.ERROR_MESSAGE);
+				}
+			});
+			
+		// Mostra a interface
+		setSize(500,500);
+		setVisible(true);
 	}
 }
