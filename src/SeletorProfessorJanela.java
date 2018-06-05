@@ -14,7 +14,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 @SuppressWarnings("serial")
-public class SeletorProfessorParaAlunoJanela extends JFrame {
+public class SeletorProfessorJanela extends JFrame {
 	
 	public JPanel titulo;
 	public JPanel botoes;
@@ -23,22 +23,22 @@ public class SeletorProfessorParaAlunoJanela extends JFrame {
 	public JButton botaoNovo;
 	
 	public List<Professor> listagemProfs;
-	public MyListModel<Professor> listagemModel;
-	
-	public SeletorProfessorParaAlunoJanela() {
+	public Professor[] arrayProfs;
+
+	public SeletorProfessorJanela(){
 		super("Listagem de Alunos");
 		
 		listagemProfs = CRUDFaculdade.hi().getProfessor();
-		listagemModel = new MyListModel<>();
+		arrayProfs = new Professor[listagemProfs.size()];
 		
 		for(int i=0; i<listagemProfs.size(); i++){
-			listagemModel.add(listagemProfs.get(i));
+			arrayProfs[i] = listagemProfs.get(i);
 		}
 		
 		// Inicia os elementos
 		titulo = new JPanel();
 		tituloTexto = new JLabel("Listagem de Alunos");
-		listagem = new JComboBox(listagemModel);
+		listagem = new JComboBox(arrayProfs);
 		botaoNovo = new JButton("Ok");
 		botoes = new JPanel();
 		
@@ -47,11 +47,9 @@ public class SeletorProfessorParaAlunoJanela extends JFrame {
 		add(titulo, BorderLayout.NORTH);
 		add(listagem);
 		botoes.add(botaoNovo);
-		botoes.add(botaoMaisNovo);
-		botoes.add(botaoNovissimo);
 		add(botoes, BorderLayout.SOUTH);
 		
-		// Listeners
+		/*// Listeners
 			// Criar
 			botaoNovo.addActionListener((e)->{
 				String nome = JOptionPane.showInputDialog(this, "Nome: ");
@@ -123,7 +121,7 @@ public class SeletorProfessorParaAlunoJanela extends JFrame {
 							"Erro", 
 							JOptionPane.ERROR_MESSAGE);
 				}
-			});
+			});*/
 		
 		// Mostra a interface
 		setSize(500,500);

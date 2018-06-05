@@ -61,6 +61,7 @@ public class ListarTurmasJanela extends JFrame {
 				String descricao = JOptionPane.showInputDialog(this, "Descrição: ");
 				String dataInicio = JOptionPane.showInputDialog(this, "Data de início: ");
 				String dataTermino = JOptionPane.showInputDialog(this, "Data de término: ");
+				SeletorProfessorJanela eita = new SeletorProfessorJanela();
 				
 				
 				
