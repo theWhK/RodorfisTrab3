@@ -26,7 +26,7 @@ public class SeletorProfessorJanela extends JFrame {
 	public Professor[] arrayProfs;
 
 	public SeletorProfessorJanela(){
-		super("Listagem de Alunos");
+		super("Seletor de Professor");
 		
 		listagemProfs = CRUDFaculdade.hi().getProfessor();
 		arrayProfs = new Professor[listagemProfs.size()];
@@ -37,7 +37,7 @@ public class SeletorProfessorJanela extends JFrame {
 		
 		// Inicia os elementos
 		titulo = new JPanel();
-		tituloTexto = new JLabel("Listagem de Alunos");
+		tituloTexto = new JLabel("Seletor de Professor");
 		listagem = new JComboBox(arrayProfs);
 		botaoNovo = new JButton("Ok");
 		botoes = new JPanel();
