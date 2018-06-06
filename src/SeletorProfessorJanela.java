@@ -29,7 +29,7 @@ public class SeletorProfessorJanela extends JFrame {
 	public SeletorProfessorJanela(Turma galera){
 		super("Seletor de Professor");
 		
-		listagemProfs = CRUDFaculdade.hi().getProfessor();
+		listagemProfs = DataLayer.hi().getProfessor();
 		arrayProfs = new Professor[listagemProfs.size()];
 		
 		for(int i=0; i<listagemProfs.size(); i++){

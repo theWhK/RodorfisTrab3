@@ -30,7 +30,7 @@ public class ListarTurmasJanela extends JFrame {
 	public ListarTurmasJanela() {
 		super("Listagem de Alunos");
 		
-		listagemTurmas = CRUDFaculdade.hi().getTurma();
+		listagemTurmas = DataLayer.hi().getTurma();
 		listagemModel = new MyListModel<>();
 		
 		for(int i = 0; i < listagemTurmas.size(); i++){
@@ -67,7 +67,7 @@ public class ListarTurmasJanela extends JFrame {
 				galera.setDataInicio(dataInicio);
 				galera.setDataTermino(dataTermino);
 				
-				CRUDFaculdade.hi().addTurma(galera);
+				DataLayer.hi().addTurma(galera);
 				listagemModel.add(galera);
 				/*String cpf = JOptionPane.showInputDialog(this, "CPF: ");
 				String rg = JOptionPane.showInputDialog(this, "RG: ");

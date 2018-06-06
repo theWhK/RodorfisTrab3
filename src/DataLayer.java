@@ -1,16 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class CRUDFaculdade {
+public class DataLayer {
 	private List<Aluno> alunos = new ArrayList<Aluno>();
 	private List<Professor> professores = new ArrayList<Professor>();
 	private List<Turma> turmas = new ArrayList<Turma>();
-	private static CRUDFaculdade instance;
+	private static DataLayer instance;
 	
-	public static CRUDFaculdade hi(){
-		if(instance==null){
-			instance = new CRUDFaculdade();
+	public static DataLayer hi(){
+		if (instance == null) {
+			instance = new DataLayer();
 		}
+		
 		return instance;
 	}
 	

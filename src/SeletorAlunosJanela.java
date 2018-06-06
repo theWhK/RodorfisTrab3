@@ -28,7 +28,7 @@ public class SeletorAlunosJanela extends JFrame {
 	public SeletorAlunosJanela(){
 		super("Seletor de Alunos");
 		
-		listaAlunos = CRUDFaculdade.hi().getAlunos();
+		listaAlunos = DataLayer.hi().getAlunos();
 		listaAlunosModel = new MyListModel<>();
 		
 		for(int i = 0; i < listaAlunos.size(); i++){

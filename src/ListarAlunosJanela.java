@@ -31,7 +31,7 @@ public class ListarAlunosJanela extends JFrame {
 	public ListarAlunosJanela() {
 		super("Listagem de Alunos");
 		
-		listagemAlunos = CRUDFaculdade.hi().getAlunos();
+		listagemAlunos = DataLayer.hi().getAlunos();
 		listagemModel = new MyListModel<>();
 		
 		for(int i=0; i<listagemAlunos.size(); i++){
@@ -70,7 +70,7 @@ public class ListarAlunosJanela extends JFrame {
 				a.setRg(rg);
 				a.setRa(ra);
 				a.setDataDeMatricula(dataDeMatricula);
-				CRUDFaculdade.hi().addAluno(a);
+				DataLayer.hi().addAluno(a);
 				listagemModel.add(a);
 			});
 			// Atualizar
@@ -109,7 +109,7 @@ public class ListarAlunosJanela extends JFrame {
 			botaoNovissimo.addActionListener((e)->{
 				try {
 					int index = listagem.getSelectedIndex();
-					CRUDFaculdade.hi().removeAlunoAt(index);
+					DataLayer.hi().removeAlunoAt(index);
 					listagemModel.remove(index);
 				}
 				catch (NullPointerException oCaraNaoSelecionouNadaMeuDeus) {

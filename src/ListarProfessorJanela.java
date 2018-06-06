@@ -28,7 +28,7 @@ public class ListarProfessorJanela extends JFrame {
 	public ListarProfessorJanela(){
 		super("Listagem de Professores");
 		
-		listagemProfessores = CRUDFaculdade.hi().getProfessor();
+		listagemProfessores = DataLayer.hi().getProfessor();
 		listagemModel = new MyListModel<>();
 		
 		for(int i=0; i<listagemProfessores.size(); i++){
@@ -65,7 +65,7 @@ public class ListarProfessorJanela extends JFrame {
 				p.setCpf(cpf);
 				p.setRg(rg);
 				p.setEspecialidade(especialidade);
-				CRUDFaculdade.hi().addProfessor(p);
+				DataLayer.hi().addProfessor(p);
 				listagemModel.add(p);
 			});
 			// Atualizar
@@ -102,7 +102,7 @@ public class ListarProfessorJanela extends JFrame {
 			botaoNovissimo.addActionListener((e)->{
 				try {
 					int index = listagem.getSelectedIndex();
-					CRUDFaculdade.hi().removeProfessorAt(index);
+					DataLayer.hi().removeProfessorAt(index);
 					listagemModel.remove(index);
 				}
 				catch (NullPointerException oCaraNaoSelecionouNadaMeuDeus) {
