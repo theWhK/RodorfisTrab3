@@ -25,7 +25,7 @@ public class SeletorProfessorJanela extends JFrame {
 	public List<Professor> listagemProfs;
 	public Professor[] arrayProfs;
 
-	public SeletorProfessorJanela(){
+	public SeletorProfessorJanela(Turma galera){
 		super("Seletor de Professor");
 		
 		listagemProfs = CRUDFaculdade.hi().getProfessor();
@@ -49,25 +49,13 @@ public class SeletorProfessorJanela extends JFrame {
 		botoes.add(botaoNovo);
 		add(botoes, BorderLayout.SOUTH);
 		
-		/*// Listeners
+		// Listeners
 			// Criar
 			botaoNovo.addActionListener((e)->{
-				String nome = JOptionPane.showInputDialog(this, "Nome: ");
-				String cpf = JOptionPane.showInputDialog(this, "CPF: ");
-				String rg = JOptionPane.showInputDialog(this, "RG: ");
-				String ra = JOptionPane.showInputDialog(this, "RA:" );
-				String dataDeMatricula = JOptionPane.showInputDialog(this, "Data de matricula: ");
-				Aluno a = new Aluno();
-				a.setNome(nome);
-				a.setCpf(cpf);
-				a.setRg(rg);
-				a.setRa(ra);
-				a.setCpf(cpf);
-				a.setDataDeMatricula(dataDeMatricula);
-				CRUDFaculdade.hi().addAluno(a);
-				listagemModel.add(a);
+				galera.setProfessor((Professor)listagem.getSelectedItem());
+				setVisible(false);
 			});
-			// Atualizar
+			/*// Atualizar
 			botaoMaisNovo.addActionListener((e)->{
 				try {
 					Aluno a = listagem.getSelectedValue();
