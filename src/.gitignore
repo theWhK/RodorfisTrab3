@@ -1,5 +1,5 @@
 /Aluno.class
-/CRUDFaculdade.class
+/DataLayer.class
 /GestorFaculdadeJanela.class
 /ListarAlunosJanela.class
 /ListarProfessorJanela.class
@@ -9,4 +9,4 @@
 /Professor.class
 /SeletorProfessorJanela.class
 /Turma.class
-/Turma.class
+/SeletorAlunosJanela.class
