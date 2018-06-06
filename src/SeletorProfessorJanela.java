@@ -12,6 +12,7 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import java.awt.Dimension;
 
 @SuppressWarnings("serial")
 public class SeletorProfessorJanela extends JFrame {
@@ -40,7 +41,7 @@ public class SeletorProfessorJanela extends JFrame {
 		tituloTexto = new JLabel("Seletor de Professor");
 		listagem = new JComboBox(arrayProfs);
 		botaoNovo = new JButton("Ok");
-		botoes = new JPanel();
+		botoes = new JPanel();	
 		
 		// Adiciona os elementos na interface
 		titulo.add(tituloTexto);
@@ -112,7 +113,7 @@ public class SeletorProfessorJanela extends JFrame {
 			});*/
 		
 		// Mostra a interface
-		setSize(500,500);
+		setSize(500,200);
 		setVisible(true);
 	}
 }
