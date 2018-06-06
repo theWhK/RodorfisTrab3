@@ -117,11 +117,12 @@ public class ListarTurmasJanela extends JFrame {
 				}
 	
 			});
+			*/
 			// Remover
 			botaoNovissimo.addActionListener((e)->{
 				try {
 					int index = listagem.getSelectedIndex();
-					CRUDFaculdade.hi().removeAlunoAt(index);
+					DataLayer.hi().removeTurmaAt(index);
 					listagemModel.remove(index);
 				}
 				catch (NullPointerException oCaraNaoSelecionouNadaMeuDeus) {
@@ -138,7 +139,7 @@ public class ListarTurmasJanela extends JFrame {
 							"Erro", 
 							JOptionPane.ERROR_MESSAGE);
 				}
-			});*/
+			});
 		
 		// Mostra a interface
 		setSize(500,500);

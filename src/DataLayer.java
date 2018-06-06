@@ -75,7 +75,7 @@ public class DataLayer {
 		}
 	}
 	
-	public boolean removeTurma(int i) {
+	public boolean removeTurmaAt(int i) {
 		if(!turmas.isEmpty()) {
 			if(turmas.remove(i) != null) {
 				return true;
