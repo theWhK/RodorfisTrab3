@@ -12,6 +12,7 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import java.awt.Dimension;
 
 @SuppressWarnings("serial")
 public class SeletorProfessorJanela extends JFrame {
@@ -25,8 +26,8 @@ public class SeletorProfessorJanela extends JFrame {
 	public List<Professor> listagemProfs;
 	public Professor[] arrayProfs;
 
-	public SeletorProfessorJanela(){
-		super("Listagem de Alunos");
+	public SeletorProfessorJanela(Turma galera){
+		super("Seletor de Professor");
 		
 		listagemProfs = CRUDFaculdade.hi().getProfessor();
 		arrayProfs = new Professor[listagemProfs.size()];
@@ -37,10 +38,10 @@ public class SeletorProfessorJanela extends JFrame {
 		
 		// Inicia os elementos
 		titulo = new JPanel();
-		tituloTexto = new JLabel("Listagem de Alunos");
+		tituloTexto = new JLabel("Seletor de Professor");
 		listagem = new JComboBox(arrayProfs);
 		botaoNovo = new JButton("Ok");
-		botoes = new JPanel();
+		botoes = new JPanel();	
 		
 		// Adiciona os elementos na interface
 		titulo.add(tituloTexto);
@@ -49,25 +50,13 @@ public class SeletorProfessorJanela extends JFrame {
 		botoes.add(botaoNovo);
 		add(botoes, BorderLayout.SOUTH);
 		
-		/*// Listeners
+		// Listeners
 			// Criar
 			botaoNovo.addActionListener((e)->{
-				String nome = JOptionPane.showInputDialog(this, "Nome: ");
-				String cpf = JOptionPane.showInputDialog(this, "CPF: ");
-				String rg = JOptionPane.showInputDialog(this, "RG: ");
-				String ra = JOptionPane.showInputDialog(this, "RA:" );
-				String dataDeMatricula = JOptionPane.showInputDialog(this, "Data de matricula: ");
-				Aluno a = new Aluno();
-				a.setNome(nome);
-				a.setCpf(cpf);
-				a.setRg(rg);
-				a.setRa(ra);
-				a.setCpf(cpf);
-				a.setDataDeMatricula(dataDeMatricula);
-				CRUDFaculdade.hi().addAluno(a);
-				listagemModel.add(a);
+				galera.setProfessor((Professor)listagem.getSelectedItem());
+				setVisible(false);
 			});
-			// Atualizar
+			/*// Atualizar
 			botaoMaisNovo.addActionListener((e)->{
 				try {
 					Aluno a = listagem.getSelectedValue();
@@ -124,7 +113,7 @@ public class SeletorProfessorJanela extends JFrame {
 			});*/
 		
 		// Mostra a interface
-		setSize(500,500);
+		setSize(500,200);
 		setVisible(true);
 	}
 }
