@@ -2,16 +2,10 @@
 /CRUDFaculdade.class
 /GestorFaculdadeJanela.class
 /ListarAlunosJanela.class
+/ListarProfessorJanela.class
 /ListarTurmasJanela.class
 /MyListModel.class
 /Pessoa.class
 /Professor.class
+/SeletorProfessorJanela.class
 /Turma.class
-<<<<<<< HEAD
-/ListarProfessoresJanela.class
-/SeletorProfessorParaAlunoJanela.class
-=======
-/ListarTurmasJanela.class
-
->>>>>>> f92ea74da50c6c1e81eb790e43fe50c669f7fe6c
-/ListarProfessorJanela.class
