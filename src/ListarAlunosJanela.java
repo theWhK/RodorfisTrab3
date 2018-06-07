@@ -59,21 +59,9 @@ public class ListarAlunosJanela extends JFrame {
 		// Listeners
 			// Criar
 			botaoNovo.addActionListener((e)->{
-				String nome = JOptionPane.showInputDialog(this, "Nome: ");
-				String cpf = JOptionPane.showInputDialog(this, "CPF: ");
-				String rg = JOptionPane.showInputDialog(this, "RG: ");
-				String ra = JOptionPane.showInputDialog(this, "RA:" );
-				String dataDeMatricula = JOptionPane.showInputDialog(this, "Data de matricula: ");
-				Aluno a = new Aluno();
-				a.setNome(nome);
-				a.setCpf(cpf);
-				a.setRg(rg);
-				a.setRa(ra);
-				a.setDataDeMatricula(dataDeMatricula);
-				DataLayer.hi().addAluno(a);
-				listagemModel.add(a);
+				CadastroAlunoJanela euNaoSei = new CadastroAlunoJanela(listagemModel);
 			});
-			// Atualizar
+			/*// Atualizar
 			botaoMaisNovo.addActionListener((e)->{
 				try {
 					Aluno a = listagem.getSelectedValue();
@@ -104,7 +92,7 @@ public class ListarAlunosJanela extends JFrame {
 							JOptionPane.ERROR_MESSAGE);
 				}
 				
-			});
+			});*/
 			// Remover
 			botaoNovissimo.addActionListener((e)->{
 				try {

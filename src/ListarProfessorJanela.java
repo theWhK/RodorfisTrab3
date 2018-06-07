@@ -56,19 +56,9 @@ public class ListarProfessorJanela extends JFrame {
 		// Listeners
 			// Criar
 			botaoNovo.addActionListener((e)->{
-				String nome = JOptionPane.showInputDialog(this, "Nome: ");
-				String cpf = JOptionPane.showInputDialog(this, "CPF: ");
-				String rg = JOptionPane.showInputDialog(this, "RG: ");
-				String especialidade = JOptionPane.showInputDialog(this, "Especialidade:" );
-				Professor p = new Professor();
-				p.setNome(nome);
-				p.setCpf(cpf);
-				p.setRg(rg);
-				p.setEspecialidade(especialidade);
-				DataLayer.hi().addProfessor(p);
-				listagemModel.add(p);
+				CadastroProfessorJanela euNaoSei = new CadastroProfessorJanela(listagemModel);
 			});
-			// Atualizar
+			/*// Atualizar
 			botaoMaisNovo.addActionListener((e)->{
 				try {
 					Professor p = listagem.getSelectedValue();
@@ -98,7 +88,7 @@ public class ListarProfessorJanela extends JFrame {
 				}
 				
 			});
-			// Remover
+			*/// Remover
 			botaoNovissimo.addActionListener((e)->{
 				try {
 					int index = listagem.getSelectedIndex();

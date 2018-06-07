@@ -58,17 +58,7 @@ public class ListarTurmasJanela extends JFrame {
 		// Listeners
 			// Criar
 			botaoNovo.addActionListener((e)->{
-				Turma galera = new Turma();
-				String descricao = JOptionPane.showInputDialog(this, "Descrição: ");
-				String dataInicio = JOptionPane.showInputDialog(this, "Data de início: ");
-				String dataTermino = JOptionPane.showInputDialog(this, "Data de término: ");
-				SeletorProfessorJanela eita = new SeletorProfessorJanela(galera);
-				galera.setDescricao(descricao);
-				galera.setDataInicio(dataInicio);
-				galera.setDataTermino(dataTermino);
-				
-				DataLayer.hi().addTurma(galera);
-				listagemModel.add(galera);
+				CadastroTurmaJanela euNaoSei = new CadastroTurmaJanela(listagemModel);
 				/*String cpf = JOptionPane.showInputDialog(this, "CPF: ");
 				String rg = JOptionPane.showInputDialog(this, "RG: ");
 				String ra = JOptionPane.showInputDialog(this, "RA:" );

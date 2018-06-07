@@ -7,6 +7,8 @@
 /MyListModel.class
 /Pessoa.class
 /Professor.class
-/SeletorProfessorJanela.class
 /Turma.class
 /SeletorAlunosJanela.class
+/CadastroAlunoJanela.class
+/CadastroProfessorJanela.class
+/CadastroTurmaJanela.class
