@@ -55,7 +55,7 @@ public class CadastroProfessorJanela extends JFrame {
 		adicionarButton = new JButton("Adicionar");
 		cancelarButton = new JButton("Cancelar");
 		
-		setLayout(new GridLayout(7, 1));
+		setLayout(new GridLayout(6, 1));
 		
 		tituloPanel.add(tituloTexto);
 		add(tituloPanel);
